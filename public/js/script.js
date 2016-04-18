@@ -25,6 +25,7 @@ function draw(){
 		console.log(textSize);
 		drawMsg(userMsg);
 		$('#imageLoader').hide();
+		$('#download').show();
 		// $('#change_color').show();
 	});
 
@@ -34,10 +35,11 @@ function draw(){
 		ctx.font = "35px Roboto Condensed";
 		var textSize = text.width;
 		var yPosition = (canvas.height/1.1);
-		ctx.fillText("#DearNextPresident", 10, yPosition-34);
+		var nextprextext = "#DearNextPresident";
+		ctx.fillText(nextprextext.toUpperCase(), 10, yPosition-44);
 		ctx.fillStyle = 'pink';
-		ctx.font = "25px Roboto Condensed";
-		ctx.fillText(usertext, 10, yPosition);
+		ctx.font = "29px Roboto Condensed";
+		ctx.fillText(usertext.toUpperCase(), 10, yPosition);
 	}
 
 	function downloadCanvas(link, canvasId, filename) {
@@ -58,6 +60,9 @@ function draw(){
 		    url: img,
 		    points: [0,0,280,739]
 		});
+
+		$('#submit-button-box').show();
+		$('.custom-file-upload').hide();
 
 		//on button click
 

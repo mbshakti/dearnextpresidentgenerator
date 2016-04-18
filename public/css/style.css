@@ -1,5 +1,5 @@
 body {
-	width: 600px;
+	width: 500px;
 	margin: 0 auto;
 	margin-top: 20px;
 }
@@ -39,6 +39,7 @@ body {
 	/*border: 1px solid #ddd;*/
 	position: relative;
 	display: block;
+    margin-top: 14%;
 	/*width: 500px;*/
 	/*height: 500px;*/
 }
@@ -68,7 +69,7 @@ input:focus{
     outline: none;
 }
 
-#submit-button-box, #submit-msg, #download {
+#file-upload, #submit-button-box, #submit-msg, #download {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -80,22 +81,55 @@ input:focus{
     outline: none;
     margin-top: 5px;
     font-family: 'Roboto Condensed', sans-serif;
+    display: none;
 }
 
 #upload-img{
 	display: none;
 }
 
-#submit-msg, #download {
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: 29% 0% 0% 38%;
+}
+
+.custom-file-upload:hover {
+	background-color: #c0c0c0;
+}
+
+.logo-header{
+	width: 36%;
+}
+
+#top-header {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    width: 100vw;
+    background-color: #390075;
+}
+
+
+.countdown {
+	color: #c0c0c0;
 	display: none;
 }
 
-.countdown {
-	display: block;
-	color: #c0c0c0;
-	display: none;
+#user-input-container{
+	text-align: center;
 }
 
 #change_color {
 	display: none;
 }
+
+
