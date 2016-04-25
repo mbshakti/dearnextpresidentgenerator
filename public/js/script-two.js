@@ -17,7 +17,9 @@ function draw(){
 	var chicken;
 	var image = new Image();
 	var yPosition;
-	var dnpLogo = new Image() 
+	var dnpLogo = new Image();
+	var uploadedImg;
+
 
 	$('#submit-msg').click(function(){
 		var originalUserMsg = $('#user-msg').val();
@@ -26,25 +28,32 @@ function draw(){
 		text = ctx.measureText(userMsg);
 		textSize = text.width;
 		console.log(textSize);
-		drawMsg(userMsg);
 		$('#imageLoader').hide();
 		$('#download').show();
-		// $('#change_color').show();
 	});
 
 	var $text = document.getElementById("user-msg");
-	// var $text = $('#user-msg').toUpperCase();
+
+	function drawLogo(){
+		ctx.shadowColor = "black";
+		ctx.shadowOffsetX = 0;
+		ctx.shadowOffsetY = 0;
+		ctx.shadowBlur = 0;
+		dnpLogo.src = "../img/logo-small.png" 
+		ctx.drawImage(dnpLogo, 10, 20);
+	}
 	
 	$text.onkeyup = function (e) {
 	    ctx.clearRect(0, 0, canvas.width, canvas.height);
 	    ctx.drawImage(image, 0, 0, image.width, image.height);
-	    wrapText(ctx, $text.value.toUpperCase(), 10, yPosition, 480, 14);
+	    drawLogo();
+	    wrapText(ctx, $text.value.toUpperCase(), 30, yPosition, 480, 30);
 	}
 
 	function wrapText(context, text, x, y, maxWidth, fontSize, fontFace) {
 	    var words = text.split(' ');
 	    var line = '';
-	    var lineHeight = fontSize+20;
+	    var lineHeight = fontSize+5;
 
 	    // context.font = fontSize + " " + fontFace;
 
@@ -53,6 +62,11 @@ function draw(){
 	        var metrics = context.measureText(testLine);
 	        var testWidth = metrics.width;
 	        if (testWidth > maxWidth) {
+				ctx.fillStyle = '#fff';
+				ctx.shadowColor = "#383334";
+				ctx.shadowOffsetX = 2;
+				ctx.shadowOffsetY = 2;
+				ctx.shadowBlur = 5;
 	            context.fillText(line, x, y);
 	            line = words[n] + ' ';
 	            y += lineHeight;
@@ -60,34 +74,17 @@ function draw(){
 	            line = testLine;
 	        }
 	    }
-		ctx.font = "27px Roboto Condensed";
-	    // context.font = "35px Roboto Condensed";
-		yPosition = (canvas.height/1.2);
+		ctx.font = "30px Roboto Condensed";
+		yPosition = (canvas.height/1.5);
 		var textwidth = ctx.measureText(line).width;
 		ctx.fillStyle = '#fff';
-		ctx.fillRect(10, y-28, textwidth, fontSize+20);
-		ctx.fillStyle = '#000';
-		ctx.fillText(line, 10, y);
-		dnpLogo.src = "../img/DNP.png" 
-		ctx.drawImage(dnpLogo, 10, yPosition-65);
-		// var dearnxttext = "#Dear"
-		// var nextprextext = "#DearNextPresident";
-		// ctx.fillText(nextprextext.toUpperCase(), 10, yPosition-35);
+		ctx.shadowColor = "#383334";
+		ctx.shadowOffsetX = 2;
+		ctx.shadowOffsetY = 2;
+		ctx.shadowBlur = 5;
+		ctx.fillText(line, 30, y);
 	    return (y);
 	}
-
-	// function drawMsg(usertext){
-	// 	console.log("drawing messaage");
-	// 	ctx.fillStyle = 'white';
-	// 	ctx.font = "35px Roboto Condensed";
-	// 	var textSize = text.width;
-	// 	var yPosition = (canvas.height/1.1);
-	// 	var nextprextext = "#DearNextPresident";
-	// 	ctx.fillText(nextprextext.toUpperCase(), 10, yPosition-44);
-	// 	ctx.fillStyle = 'pink';
-	// 	ctx.font = "29px Roboto Condensed";
-	// 	ctx.fillText(usertext.toUpperCase(), 10, yPosition);
-	// }
 
 	function downloadCanvas(link, canvasId, filename) {
 	    link.href = document.getElementById(canvasId).toDataURL();
@@ -134,49 +131,15 @@ function draw(){
 	}
 
 
-	// ctx.drawImage(document.getElementById("cat"),0, 0);
 
 	function handleImage(e){
 		var reader = new FileReader();
 		reader.onload = function(event){
 			var img = new Image();
 			img.onload = function(){
-				// var max_width = 500;
 				canvas.width = 500;
 				canvas.height = 500;
-				// ctx.drawImage(img, 0, 0, img.width, img.height);
-
-				// if (img.width > max_width) {
-				// 	img.height *= max_width / img.width;
-				// 	img.width = max_width;
-				// }
-				// if (img.width < max_width){
-				// 	img.width = max_width;
-				// 	img.height *= max_width / img.width;
-				// }
-				// canvas.width = img.width;
-				// canvas.height = img.height;
-				// ctx.drawImage(img, 0, 0, canvas.width, canvas.height, 0, 0, canvas.width, canvas.height);
- 				// $('#upload-img').croppie({
-					// 			    viewport: {
-					// 			        width: 150,
-					// 			        height: 200
-					// 			    }
-					// 			});
-				// imgSize = calculateAspectRatio(img.width, img.height, canvas.width, canvas.height);
-				// function calculateAspectRatio(src_width, src_height, max_width, max_height){
-				// 	var ratio = Math.min(max_width/src_width, max_height/src_height);
-				// 	var rtnWidth = src_width*ratio;
-				// 	var rtnHeight = src_height*ratio;
-				// 	return {
-				// 		width: rtnWidth,
-				// 		height: rtnHeight
-				// 	};
-				// }
-				// ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 				$('#imageLoader').hide();
-				// canvas.width = imgSize.width;
-				// canvas.height = imgSize.height;
 
 			}
 			img.src = event.target.result;
@@ -185,8 +148,6 @@ function draw(){
 			cropAndScale(imageSource);
 		}
 		reader.readAsDataURL(e.target.files[0]);
-		// var dataURLuploaded = reader.readAsDataURL(e.target.files[0]);
-		// console.log(dataURLuploaded);
 	}
 }
 
@@ -218,3 +179,40 @@ function updateCountDown(){
 	var remaining = 50 - $('#user-msg').val().length;
 	$('.countdown').text(remaining+" characters left");
 }
+
+var twitterButton = $('.twitter-share');
+var facebookButton = $('.facebook-share');
+
+function shareOnSocial(button, imageurl){
+	Share.init(button, {
+	    title: 'share it',
+	    url: imageurl
+	});
+}
+
+$('.twitter-share').click(function(){
+	shareOnSocial(twitterButton, uploadedImg);
+});
+
+$('.facebook-share').click(function(){
+	shareOnSocial(facebookButton, uploadedImg);
+});
+
+$('#finished').click(function(){
+	sentImgToServer('upload-img');
+	console.log("finished click");
+});
+
+
+function sentImgToServer(canvasId){
+  var dataURL = document.getElementById(canvasId).toDataURL();
+  $.post('/img', {
+  	imageDataUrl : dataURL
+  }, function(response){
+    console.log("Image Url: "+response.img);
+    uploadedImg = response.img;
+    $('.social').show();
+  });
+}
+
+

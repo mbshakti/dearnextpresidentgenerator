@@ -1,24 +1,17 @@
 body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+/*#canvas {
 	width: 500px;
-	margin: 0 auto;
-	margin-top: 20px;
-}
+}*/
 
-#cat {
-	display: none;
-}
-
-
-#canvas {
-	width: 500px;
-}
-
-#sourceText{
+/*#sourceText{
 	width: 500px;
 	height: 50px;
 	padding: 0;
 }
-
+*/
 #user-msg{
 	width: 500px;
 	height: 50px;
@@ -26,51 +19,45 @@ body {
 	display: none;
 }
 
-#imageLoader{
-	/*display: none;*/
 
-}
-
-#download {
-	display: none;
-}
 
 #upload-img {
-	/*border: 1px solid #ddd;*/
 	position: relative;
 	display: block;
     margin-top: 14%;
-	/*width: 500px;*/
-	/*height: 500px;*/
 }
 
 #imageLoader {
 	width: 300px;
 	height: 50px;
-	/*background-color: black;*/
 	position: absolute;
 	top: 15%;
 	left: 44%;
 	padding: 10px;
 }
 
-/*input[type="file"] {
-	visibility: hidden;
-}*/
+
 
 input[type="file"] {
     position: absolute;
     font-size: 20px;
     cursor: pointer;
     color: transparent;
+    display: none;
 }
 
 input:focus{
     outline: none;
 }
 
-#file-upload, #submit-button-box, #submit-msg, #download {
-    background-color: #4CAF50; /* Green */
+#file-upload, 
+#submit-button-box, 
+#submit-msg, 
+#white-text-msg,
+#download,
+#finished,
+.social {
+    background-color: #4CAF50; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -84,20 +71,17 @@ input:focus{
     display: none;
 }
 
-#upload-img{
+#upload-img {
 	display: none;
 }
 
-input[type="file"] {
-    display: none;
-}
 
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-    margin: 29% 0% 0% 38%;
+    margin: 8% 0% 0% 43%;
 }
 
 .custom-file-upload:hover {
