@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" href="css/croppie.css" />
+  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/7749ba3966/UntitledProject/style.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -26,20 +27,21 @@
 	<div id="test">
 		<div id="demo-basic"></div>
 	</div>
-	<div id="submit-button-box">upload image</div>
+	<div id="submit-button-box"><span class="icon-upload3 icofont"></span>upload image</div>
 
-	<label for="imageLoader" class="custom-file-upload button button--moema button--text-thick button--text-upper button--size-s">Generate your image</label>
+	<label for="imageLoader" class="custom-file-upload button button--moema button--text-thick button--text-upper button--size-s">Generate your own</label>
 	<input type="file" id="imageLoader" name="imageLoader" size="60">
 
-	<div id="user-input-container">
+	<div id="user-input-container"><span class="blinking-cursor">|</span>
 		<input id="user-msg" maxlength="26" type="text">
-		<div class="countdown"></div>
-		<button id="submit-msg">Done</button>
-		<button id="finished">Finished</button>
-		<a id="download">Download as image</a>
-		<a class="twitter-share social" data-service="twitter" data-title="dearnextpresident">twitter</a>
-		<a class="facebook-share social" data-service="facebook">facebook</a>
 
+		<div class="bottom-container">
+			<div class="countdown"></div>
+			<button id="submit-msg"><span class="icon-checkmark icofont"></span>Done</button>	
+			<button id="finished">Finished</button>
+			<a id="download"><span class="icon-download3 icofont"></span>Download image</a>
+			<a class="twitter-share social" data-service="twitter" data-title="dearnextpresident"><span class="icon-twitter icofont"></span>Share on twitter</a>	
+		</div>
 	</div>
 </div>
 	<div class="msrItems">
@@ -62,9 +64,7 @@
 <script src="js/script-two.js"></script>
 <script src="js/underscore.js"></script>
 
-<script type="text/javascript">
 
-</script>
 
 </body>
 </html>

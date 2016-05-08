@@ -47,6 +47,7 @@ function draw(){
 	}
 	
 	$text.onkeyup = function (e) {
+		$('.blinking-cursor').hide();
 	    ctx.clearRect(0, 0, canvas.width, canvas.height);
 	    ctx.drawImage(image, 0, 0, image.width, image.height);
 	    drawLogo();
@@ -146,6 +147,7 @@ function draw(){
 				canvas.width = 500;
 				canvas.height = 500;
 				$('#imageLoader').hide();
+				$('.logo-header').hide();
 
 			}
 			img.src = event.target.result;
@@ -182,7 +184,7 @@ window.onload = function(){
 };
 
 function updateCountDown(){
-	var remaining = 50 - $('#user-msg').val().length;
+	var remaining = 26 - $('#user-msg').val().length;
 	$('.countdown').text(remaining+" characters left");
 }
 
