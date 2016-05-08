@@ -38,15 +38,19 @@ function draw(){
 		ctx.shadowOffsetX = 0;
 		ctx.shadowOffsetY = 0;
 		ctx.shadowBlur = 0;
-		dnpLogo.src = "../img/logo-small.png" 
-		ctx.drawImage(dnpLogo, 10, 20);
+		dnpLogo.src = "../img/test2-01.png";
+		var t = canvas.height / 2 - dnpLogo.height / 2;
+		ctx.drawImage(dnpLogo,
+        canvas.width / 2 - dnpLogo.width / 2,
+        t+22
+		);
 	}
 	
 	$text.onkeyup = function (e) {
 	    ctx.clearRect(0, 0, canvas.width, canvas.height);
 	    ctx.drawImage(image, 0, 0, image.width, image.height);
 	    drawLogo();
-	    wrapText(ctx, $text.value.toUpperCase(), 30, yPosition, 480, 30);
+	    wrapText(ctx, $text.value.toUpperCase(), 40, yPosition, 480, 30);
 	}
 
 	function wrapText(context, text, x, y, maxWidth, fontSize, fontFace) {
@@ -80,8 +84,11 @@ function draw(){
 		ctx.shadowColor = "#383334";
 		ctx.shadowOffsetX = 2;
 		ctx.shadowOffsetY = 2;
-		ctx.shadowBlur = 5;
-		ctx.fillText(line, 30, y);
+		ctx.shadowBlur = 10;
+		context.textAlign = 'center';
+	    var z = canvas.width / 2;
+     	var r = canvas.height / 2;
+		ctx.fillText(line, z, r+59);
 	    return (y);
 	}
 
@@ -97,8 +104,7 @@ function draw(){
 	function cropAndScale(img){
 		var basic = $('#demo-basic').croppie({
 		    viewport: { width: 500, height: 500, type: 'square' },
-		    boundary: { width: 510, height: 510 },
-		    class: 'tiger'
+		    boundary: { width: 510, height: 510 }
 		});
 		basic.croppie('bind', {
 		    url: img,

@@ -9,26 +9,30 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
 </head>
 
+<body>
 <div id="top-header"><img class="logo-header" src="img/dearnextpresident_title_bar.png"></div>
-<canvas id="upload-img"></canvas>
-<div id="test">
-	<div id="demo-basic"></div>
+<div id="all-container">
+	<canvas id="upload-img"></canvas>
+	<div id="test">
+		<div id="demo-basic"></div>
+	</div>
+	<div id="submit-button-box">upload image</div>
+
+	<label for="imageLoader" class="custom-file-upload">Upload your image</label>
+	<input type="file" id="imageLoader" name="imageLoader" size="60">
+
+	<div id="user-input-container">
+		<input id="user-msg" maxlength="26" type="text">
+		<div class="countdown"></div>
+		<button id="submit-msg">Done</button>
+		<button id="finished">Finished</button>
+		<a id="download">Download as image</a>
+		<a class="twitter-share social" data-service="twitter" data-title="dearnextpresident">twitter</a>
+		<a class="facebook-share social" data-service="facebook">facebook</a>
+
+	</div>
 </div>
-<div id="submit-button-box">upload image</div>
 
-<label for="imageLoader" class="custom-file-upload">Upload your image</label>
-<input type="file" id="imageLoader" name="imageLoader" size="60">
-
-<div id="user-input-container">
-	<input id="user-msg" maxlength="50" type="text">
-	<div class="countdown"></div>
-	<button id="submit-msg">Done</button>
-	<button id="finished">Finished</button>
-	<a id="download">Download as image</a>
-	<a class="twitter-share social" data-service="twitter" data-title="dearnextpresident">twitter</a>
-	<a class="facebook-share social" data-service="facebook">facebook</a>
-
-</div>
 
 <!-- <button id="red">red gradient</button> -->
 

@@ -18,7 +18,6 @@ body {
 	height: 50px;
 	padding: 0;
 	display: none;
-    margin-left: 22px;
     background-color: rgba(0, 0, 0, 0);
     color: rgba(0, 0, 0, 0);
 
@@ -28,7 +27,6 @@ body {
 #upload-img {
     display: none;
     margin-top: 14%;
-    margin-left: 32%;
     width: 
 }
 
@@ -136,11 +134,6 @@ input:focus{
 	display: none;
 }
 
-#user-input-container{
-	text-align: center;
-    margin-left: 21px;
-}
-
 #change_color {
 	display: none;
 }
@@ -148,19 +141,22 @@ input:focus{
 #upload-img {
     display: none;
     margin-top: 14%;
-    margin-left: 32%;
     width: 
 }
 
+
 @media (max-width: 500px) {
+    #all-container {
+        /*transform: scale(0.80,0.80);*/
+    }
     #upload-img {
         margin-left: 2%;
         margin-top: 18%;
-        width: 92vw;
+        width: 100vw;
     }
-    #test {
+    #demo-basic {
         margin: -71px;
-        -webkit-transform: scale(.75,.75);
+        /*transform: scale(0.89,0.89);*/
     }
     .logo-header {
         max-width: 89%;
