@@ -29,7 +29,6 @@ function draw(){
 		textSize = text.width;
 		console.log(textSize);
 		$('#imageLoader').hide();
-		$('#download').show();
 	});
 
 	var $text = document.getElementById("user-msg");
@@ -98,7 +97,8 @@ function draw(){
 	function cropAndScale(img){
 		var basic = $('#demo-basic').croppie({
 		    viewport: { width: 500, height: 500, type: 'square' },
-		    boundary: { width: 600, height: 600 }
+		    boundary: { width: 510, height: 510 },
+		    class: 'tiger'
 		});
 		basic.croppie('bind', {
 		    url: img,
@@ -198,9 +198,10 @@ $('.facebook-share').click(function(){
 	shareOnSocial(facebookButton, uploadedImg);
 });
 
-$('#finished').click(function(){
+$('#submit-msg').click(function(){
 	sentImgToServer('upload-img');
 	console.log("finished click");
+	// $('.user-msg').hide();
 });
 
 
@@ -210,9 +211,14 @@ function sentImgToServer(canvasId){
   	imageDataUrl : dataURL
   }, function(response){
     console.log("Image Url: "+response.img);
-    uploadedImg = response.img;
+    uploadedImg = response.img;  
     $('.social').show();
+    $('#download').show();
+    $('#submit-msg').hide();
+    $('.countdown').hide();
   });
 }
+
+
 
 

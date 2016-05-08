@@ -14,22 +14,25 @@ body {
 }
 */
 #user-msg{
-	width: 500px;
+    width: 90vw;
+    position: relative;
+    top: 15vw;
+    right: 5vh;
 	height: 50px;
 	padding: 0;
-	display: none;
     margin-left: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
     background-color: rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0);
+/*    color: rgba(0, 0, 0, 0);*/
 
 }
 
 
+
 #upload-img {
-    display: none;
+    /*display: none;*/
     margin-top: 14%;
-    margin-left: 32%;
-    width: 
+    /*margin-left: 32%;*/
 }
 
 #imageLoader {
@@ -48,7 +51,7 @@ input[type="file"] {
     font-size: 20px;
     cursor: pointer;
     color: transparent;
-    display: none;
+    /*display: none;*/
 }
 
 input:focus{
@@ -88,22 +91,16 @@ input:focus{
 } 
 
 #submit-button-box {
-    width: 73%;
+    width: 300px;
     margin: 0 auto;
     margin-top: 36px;
-    background-color: white;
-    color: black;
-}
-
-#submit-button-box:hover {
-    background-color: 
 }
 
 .custom-file-upload {
     border: 2px solid #fff;
     display: inline-block;
     padding: 7%;
-    height: 30%;
+    height-t: 30%;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
@@ -145,25 +142,4 @@ input:focus{
 	display: none;
 }
 
-#upload-img {
-    display: none;
-    margin-top: 14%;
-    margin-left: 32%;
-    width: 
-}
-
-@media (max-width: 500px) {
-    #upload-img {
-        margin-left: 2%;
-        margin-top: 18%;
-        width: 92vw;
-    }
-    #test {
-        margin: -71px;
-        -webkit-transform: scale(.75,.75);
-    }
-    .logo-header {
-        max-width: 89%;
-    }
-}
 
