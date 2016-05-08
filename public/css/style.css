@@ -86,7 +86,7 @@ input:focus{
 } 
 
 #submit-button-box {
-    width: 73%;
+    width: 16%;
     margin: 0 auto;
     margin-top: 36px;
     background-color: white;
@@ -98,16 +98,16 @@ input:focus{
 }
 
 .custom-file-upload {
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     display: inline-block;
-    padding: 7%;
+    border-radius: 6px;
+    padding: 2%;
     height: 30%;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
     position: relative;
-    top: 28vh;
-    left: 22vw;
+    top: 34vh;
 }
 
 .custom-file-upload:hover {
@@ -115,12 +115,14 @@ input:focus{
 }
 
 .logo-header{
-	width: 367px;
+    width: 64vw;
+    position: relative;
+    top: 75px;
 }
 
 #top-header {
     position: absolute;
-    top: 0;
+    top: 73px;
     text-align: center;
     margin: 0 auto;
     left: 0;
@@ -140,8 +142,11 @@ input:focus{
 
 #upload-img {
     display: none;
-    margin-top: 14%;
-    width: 
+    margin-top: 19vw;
+}
+
+#all-container {
+    text-align: center;
 }
 
 
@@ -163,3 +168,191 @@ input:focus{
     }
 }
 
+.itm1 {
+    height: 33vw;
+    margin: -2px;
+}
+
+
+.msrItems {
+    margin: 303px auto;
+    max-width: 100vw;
+}
+
+#header-social-media {
+    background-color: #4D0E8F;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    z-index: 99;
+    height: 11vh;
+}
+
+#header-social-media h2 {
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 22px;
+    color: #7C3AC2;
+    padding-right: 12px;
+}
+
+#header-social-media ul {
+    display: inline-block;
+    padding: 0;
+    float: right;
+    padding-right: 15px;
+}
+
+ul li {
+    display: inline;
+}
+
+.social-links {
+    max-width: 38px;
+}
+
+.learn-more{
+    float: left;
+}
+
+.follow {
+    float: right;
+}
+
+.dnp-header-logo {
+    max-width: 300px;
+    position: relative;
+    top: 22px;
+    left: 278px;
+}
+
+/* Image FadeIn */
+.itm1 {
+    font-size: 21px;
+    text-align: center;
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+/* Moema */
+.button--moema {
+    padding: 1.5em 3em;
+    border-radius: 50px;
+    background: rgb(43, 0, 88);
+    border: 1px solid #240149;;
+    color: #fff;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+.button--moema.button--inverted {
+    background: #ECEFF1;
+    color: #37474f;
+}
+.button--moema::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    bottom: -20px;
+    right: -20px;
+    background: inherit;
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0.4;
+    -webkit-transform: scale3d(0.8, 0.5, 1);
+    transform: scale3d(0.8, 0.5, 1);
+}
+.button--moema:hover {
+    -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    color: #ECEFF1;
+    background-color: #1A0135;
+    -webkit-animation: anim-moema-1 0.3s forwards;
+    animation: anim-moema-1 0.3s forwards;
+}
+.button--moema.button--inverted:hover {
+    color: #ECEFF1;
+    background-color: rgb(43, 0, 48);
+}
+.button--moema:hover::before {
+    -webkit-animation: anim-moema-2 0.3s 0.3s forwards;
+    animation: anim-moema-2 0.3s 0.3s forwards;
+}
+@-webkit-keyframes anim-moema-1 {
+    60% {
+        -webkit-transform: scale3d(0.8, 0.8, 1);
+        transform: scale3d(0.8, 0.8, 1);
+    }
+    85% {
+        -webkit-transform: scale3d(1.1, 1.1, 1);
+        transform: scale3d(1.1, 1.1, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes anim-moema-1 {
+    60% {
+        -webkit-transform: scale3d(0.8, 0.8, 1);
+        transform: scale3d(0.8, 0.8, 1);
+    }
+    85% {
+        -webkit-transform: scale3d(1.1, 1.1, 1);
+        transform: scale3d(1.1, 1.1, 1);
+    }
+    100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+@-webkit-keyframes anim-moema-2 {
+    to {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes anim-moema-2 {
+    to {
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
